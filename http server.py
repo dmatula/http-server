@@ -6,9 +6,9 @@ class Serv(BaseHTTPRequestHandler):
 
     def do_GET(self):
 
-        if self.path == '$metadata':
+        if self.path == '/$metadata':
             try:
-                file_to_open = "data"
+                file_to_open = open("metadata.xml").read()
                 self.send_response(200)
             except:
                 file_to_open = "File not found"
